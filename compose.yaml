@@ -1,0 +1,16 @@
+services:
+
+  database:
+   image: postgres:16.1
+   environment: 
+    POSTGRES_PASSWORD: postgresexpense
+    POSTGRES_USER: msm-faraj
+    POSTGRES_DB: expense
+
+
+  server:
+    build: ./exp-server
+    ports: 
+     - 3000:3000
+
+
