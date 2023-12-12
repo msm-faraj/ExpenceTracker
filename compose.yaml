@@ -1,16 +1,36 @@
 services:
-
-  database:
-   image: postgres:16.1
-   environment: 
-    POSTGRES_PASSWORD: postgresexpense
-    POSTGRES_USER: msm-faraj
-    POSTGRES_DB: expense
-
+  postgres_db:
+    image: postgres:16.1
+    container_name: postgres-cnt
+    environment:
+      POSTGRES_PASSWORD: mypass
+      POSTGRES_USER: msm-faraj
+      POSTGRES_DB: exp-databse
+    ports:
+      - 5000:5432
+    volumes:
+      - postgres_db:/var/lib/postgresql/data
 
   server:
     build: ./exp-server
-    ports: 
-     - 3000:3000
+    container_name: exp-server-cnt
+    ports:
+      - 4000:4000
+    networks:
+      - expense_tracker
 
+  client:
+    build: ./exp-client
+    container_name: exp-client-cnt
+    ports:
+      - 3000:3000
+    networks:
+      - expense_tracker
 
+networks:
+  expense_tracker:
+    driver: "bridge"
+
+volumes:
+  postgres_db:
+    driver: local
