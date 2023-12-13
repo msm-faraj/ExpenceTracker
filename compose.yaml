@@ -18,6 +18,8 @@ services:
       - 4000:4000
     networks:
       - expense_tracker
+    volumes:
+      - ./exp-server:/exp-server
 
   client:
     build: ./exp-client
@@ -26,6 +28,8 @@ services:
       - 3000:3000
     networks:
       - expense_tracker
+    volumes:
+      - ./exp-client:/exp-client
 
 networks:
   expense_tracker:
