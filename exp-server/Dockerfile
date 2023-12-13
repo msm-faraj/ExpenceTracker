@@ -1,6 +1,8 @@
 #This is a dockerfile for server
 
-FROM node:21-alpine3.18 
+FROM node:21-alpine3.18
+
+RUN npm install -g nodemon
 
 WORKDIR /exp-server
 
