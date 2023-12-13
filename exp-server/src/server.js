@@ -4,6 +4,20 @@ const port = 4000;
 
 const app = express();
 
+// ** middleware
+app.use(cors());
+app.use(express.json());
+
+// ** ROUTES ** //
+
+//create an expense
+
+//get all expences
+
+//update an expense
+
+//delete an expense
+
 app.get("/", (req, res) => {
   res.sendStatus(200);
 });
