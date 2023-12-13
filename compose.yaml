@@ -5,7 +5,7 @@ services:
     environment:
       POSTGRES_PASSWORD: mypass
       POSTGRES_USER: msm-faraj
-      POSTGRES_DB: exp-databse
+      POSTGRES_DB: exp_db
     ports:
       - 5000:5432
     volumes:
