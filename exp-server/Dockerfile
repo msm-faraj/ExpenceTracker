@@ -1,4 +1,6 @@
-FROM node:21-alpine3.18 AS exp-node-img
+#This is a dockerfile for server
+
+FROM node:21-alpine3.18 
 
 WORKDIR /exp-server
 

@@ -1,7 +1,7 @@
 services:
   postgres_db:
     image: postgres:16.1
-    container_name: postgres-cnt
+    container_name: exp-postgres-cnt
     environment:
       POSTGRES_PASSWORD: mypass
       POSTGRES_USER: msm-faraj
