@@ -1,4 +1,6 @@
-FROM node:21-alpine3.18 AS exp-node-img
+#this is a dockerfile for react app
+
+FROM node:21-alpine3.18 
 
 WORKDIR /exp-client
 
@@ -7,6 +9,9 @@ COPY package*.json ./
 RUN npm install
 
 COPY  src ./src
-COPY  public ./public
+
+#COPY  public ./public
+
+COPY . ./
 
 CMD ["npm", "run", "start"]
